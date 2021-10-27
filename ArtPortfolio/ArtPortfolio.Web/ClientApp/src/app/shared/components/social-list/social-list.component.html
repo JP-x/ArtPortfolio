@@ -1,0 +1,32 @@
+<ul class="d-flex" style="padding-left:0;">
+  <li *ngIf="urlLinkedIn" class="nav-link">
+    <a href="{{urlLinkedIn}}">
+      <fa-icon [icon]="['fab', 'linkedin']" size="lg" [styles]="{'color': 'grey'}"></fa-icon>
+    </a>
+  </li>
+  <li *ngIf="urlGithub" class="nav-link">
+    <a href="{{urlGithub}}">
+      <fa-icon [icon]="['fab', 'github']" size="lg" [styles]="{'color': 'grey'}"></fa-icon>
+    </a>
+  </li>
+  <li *ngIf="urlInstagram" class="nav-link">
+    <a href="{{urlInstagram}}">
+      <fa-icon [icon]="['fab', 'instagram']" size="lg" [styles]="{'color': 'grey'}"></fa-icon>
+    </a>
+  </li>
+  <li *ngIf="urlTwitter" class="nav-link">
+    <a href="{{urlTwitter}}">
+      <fa-icon [icon]="['fab', 'twitter']" size="lg" [styles]="{'color': 'grey'}"></fa-icon>
+    </a>
+  </li>
+  <li *ngIf="urlTwitch" class="nav-link">
+    <a href="{{urlTwitch}}">
+      <fa-icon [icon]="['fab', 'twitch']" size="lg" [styles]="{'color': 'grey'}"></fa-icon>
+    </a>
+  </li>
+  <li *ngIf="urlEtsy" class="nav-link">
+    <a href="{{urlEtsy}}">
+      <fa-icon [icon]="['fab', 'etsy']" size="lg" [styles]="{'color': 'grey'}"></fa-icon>
+    </a>
+  </li>
+</ul>
