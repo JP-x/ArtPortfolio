@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-gallery-item',
@@ -6,14 +6,15 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./gallery-item.component.css']
 })
 export class GalleryItemComponent implements OnInit {
-  imageUrl = '';
-  itemArtist = '';
-  itemTitle = ''
+  @Input() imageUrl = '';
+  @Input() imageUrlThumbnail = '';
+  @Input() itemArtist = '';
+  @Input() itemTitle = ''
 
   constructor() { }
 
   ngOnInit(): void {
-    this.selectSampleImg();
+    //this.selectSampleImg();
   }
 
   private getRandomArbitrary(min: number, max: number) {

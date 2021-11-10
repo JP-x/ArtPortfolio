@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace ArtPortfolio.Functions.Gallery.Models
+namespace ArtPortfolio.Data
 {
     public class ArtistGallery
     {

@@ -8,9 +8,8 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Logging;
 using Newtonsoft.Json;
 using System.Data.SqlClient;
-using ArtPortfolio.Functions.Gallery.Models;
 using System.Collections.Generic;
-
+using ArtPortfolio.Data;
 namespace ArtPortfolio.Functions.Gallery
 {
     public static class GalleryFunctions
@@ -22,8 +21,7 @@ namespace ArtPortfolio.Functions.Gallery
         public static async Task<IActionResult> Run(
             [HttpTrigger(AuthorizationLevel.Function, "get", Route = "Gallery")] HttpRequest req, ILogger log)
         {
-            string sqlText = "Select * from gallery.vArtistGalleryDemo;";
-            //add record to image gallery db
+            string sqlText = "Select TOP(6) * from gallery.vArtistGallery order by CreatedActual desc;";
             using (var conn = new SqlConnection(_galleryConfig))
             {
                 conn.Open();
@@ -55,10 +53,6 @@ namespace ArtPortfolio.Functions.Gallery
                     return new OkObjectResult(artistGalleryList);
                 }
             }
-
-
-
-            return new OkResult();
         }
     }
 }

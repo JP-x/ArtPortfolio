@@ -1,15 +1,19 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
+
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
 import { GalleryListComponent } from './shared/components/gallery-list/gallery-list.component';
 import { GalleryItemComponent } from './shared/components/gallery-item/gallery-item.component';
 import { HomeComponent } from './home/home.component';
 import { GalleryComponent } from './gallery/gallery.component';
 import { SocialListComponent } from './shared/components/social-list/social-list.component'
 import { MatCardModule } from '@angular/material/card';
+import { MatPaginatorModule } from '@angular/material/paginator';
 import { ParallaxDirective } from './shared/directives/parallax.directive';
 import { FontAwesomeModule, FaIconLibrary } from '@fortawesome/angular-fontawesome';
 
@@ -29,7 +33,9 @@ import { faGithub, faLinkedin, faInstagram, faTwitch, faTwitter, faEtsy } from '
     AppRoutingModule,
     BrowserAnimationsModule,
     MatCardModule,
-    FontAwesomeModule
+    MatPaginatorModule,
+    FontAwesomeModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
