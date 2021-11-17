@@ -1,7 +1,12 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using ArtPortfolio.Data;
+using ArtPortfolio.Web.Configurations;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Options;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net.Http;
 using System.Threading.Tasks;
 
 namespace ArtistPortfolio.Controllers
@@ -10,36 +15,28 @@ namespace ArtistPortfolio.Controllers
     [ApiController]
     public class HomeController : ControllerBase
     {
+        private readonly AzureApiConfiguration _azureApiConfiguration;
+        public HomeController(IOptions<AzureApiConfiguration> azureApiConfig)
+        {
+            _azureApiConfiguration = azureApiConfig.Value;
+        }
+
         // GET: api/<HomeController>
         [HttpGet]
-        public IEnumerable<string> Get()
+        public async Task<IActionResult> Get()
         {
-            return new string[] { "value1", "value2" };
-        }
+            var homeDto = new HomeDto();
+            using (var httpClient = new HttpClient())
+            {
+                var request = new HttpRequestMessage(HttpMethod.Get, $"{_azureApiConfiguration.ApiUrl}/api/home");
+                request.Headers.Add("x-functions-key", _azureApiConfiguration.ApiKey);
+                var response = await httpClient.SendAsync(request);
+                response.EnsureSuccessStatusCode();
+                var contentResult = await response.Content.ReadAsStringAsync();
+                homeDto = JsonConvert.DeserializeObject<HomeDto>(contentResult);
+            }
 
-        // GET api/<HomeController>/5
-        [HttpGet("{id}")]
-        public string Get(int id)
-        {
-            return "value";
-        }
-
-        // POST api/<HomeController>
-        [HttpPost]
-        public void Post([FromBody] string value)
-        {
-        }
-
-        // PUT api/<HomeController>/5
-        [HttpPut("{id}")]
-        public void Put(int id, [FromBody] string value)
-        {
-        }
-
-        // DELETE api/<HomeController>/5
-        [HttpDelete("{id}")]
-        public void Delete(int id)
-        {
+            return new OkObjectResult(homeDto);
         }
     }
 }

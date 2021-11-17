@@ -24,6 +24,8 @@ namespace ArtistPortfolio.Controllers
         {
             _azureApiConfiguration = azureApiConfig.Value;
         }
+
+
         //inject gallery service 
         // GET: api/<GalleryController>
         [HttpGet]

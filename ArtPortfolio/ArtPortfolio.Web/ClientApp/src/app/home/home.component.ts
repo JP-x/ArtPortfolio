@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { HomeViewModel } from '../models/homeViewModel';
+import { HomeService } from '../services/home.service';
 
 @Component({
   selector: 'app-home',
@@ -7,10 +9,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
   pageTitle = 'Home';
-  constructor() {
+  homeViewModel !: HomeViewModel;
+  constructor(private homeService: HomeService) {
   }
 
   ngOnInit(): void {
+    this.homeService.getHome().subscribe(
+      (home) => {
+        console.log('Home items!');
+        console.log(home);
+        this.homeViewModel = home;
+      }
+    );
   }
 
 }

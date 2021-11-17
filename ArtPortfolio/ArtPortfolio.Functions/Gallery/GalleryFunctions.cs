@@ -17,6 +17,13 @@ namespace ArtPortfolio.Functions.Gallery
         //Pull from Appsettings in Azure
         private static string _galleryConfig = Environment.GetEnvironmentVariable("ArtistPortfolioDBConnectionString");
 
+        //Get Featured
+        //Get Most Recent
+
+        //Requires view tracking / analytics
+        //Get Most Viewed
+
+
         [FunctionName("GalleryMain")]
         public static async Task<IActionResult> Run(
             [HttpTrigger(AuthorizationLevel.Function, "get", Route = "Gallery")] HttpRequest req, ILogger log)
@@ -29,15 +36,13 @@ namespace ArtPortfolio.Functions.Gallery
                 {
                     Console.WriteLine(cmd.CommandText);
                     var sqlDataReader = await cmd.ExecuteReaderAsync();
-                    var artistGalleryList = new List<ArtistGallery>();
+                    var artistGalleryList = new List<GalleryDto>();
                     if (sqlDataReader.HasRows)
                     {
                         while (await sqlDataReader.ReadAsync())
                         {
-                            artistGalleryList.Add(new ArtistGallery()
+                            artistGalleryList.Add(new GalleryDto()
                             {
-                                ID = (Guid)sqlDataReader["ID"],
-                                ArtistID = (Guid)sqlDataReader["ArtistID"],
                                 Username = (string)sqlDataReader["Username"],
                                 Name = (string)sqlDataReader["Name"],
                                 Title = (string)sqlDataReader["Title"],

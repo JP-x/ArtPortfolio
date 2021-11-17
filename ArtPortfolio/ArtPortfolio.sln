@@ -7,7 +7,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ArtPortfolio.Web", "ArtPort
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ArtPortfolio.Functions", "ArtPortfolio.Functions\ArtPortfolio.Functions.csproj", "{402BD9F5-2E4A-4556-B5E5-D7A8FCA18406}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ArtPortfolio.Data", "ArtPortfolio.Data\ArtPortfolio.Data.csproj", "{C2655FDC-C07D-4449-A168-4CBD77A313D4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ArtPortfolio.Data", "ArtPortfolio.Data\ArtPortfolio.Data.csproj", "{C2655FDC-C07D-4449-A168-4CBD77A313D4}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

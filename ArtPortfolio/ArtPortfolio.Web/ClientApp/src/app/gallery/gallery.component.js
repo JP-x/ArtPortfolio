@@ -9,30 +9,32 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.GalleryListComponent = void 0;
+exports.GalleryComponent = void 0;
 var core_1 = require("@angular/core");
-var GalleryListComponent = /** @class */ (function () {
-    function GalleryListComponent() {
-        /* galleryItem: GalleryItem; */
-        //inject service into component
+var gallery_service_1 = require("../services/gallery.service");
+var GalleryComponent = /** @class */ (function () {
+    function GalleryComponent(galleryService) {
+        this.galleryService = galleryService;
+        this.pageTitle = 'Gallery';
         this.galleryItems = [];
     }
-    GalleryListComponent.prototype.ngOnInit = function () {
-        console.log();
+    GalleryComponent.prototype.ngOnInit = function () {
+        var _this = this;
+        this.galleryService.getGallery().subscribe(function (items) {
+            console.log('gallery items!');
+            console.log(items);
+            _this.galleryItems = items;
+        });
     };
-    __decorate([
-        (0, core_1.Input)(),
-        __metadata("design:type", Array)
-    ], GalleryListComponent.prototype, "galleryItems", void 0);
-    GalleryListComponent = __decorate([
+    GalleryComponent = __decorate([
         (0, core_1.Component)({
-            selector: 'app-gallery-list',
-            templateUrl: './gallery-list.component.html',
-            styleUrls: ['./gallery-list.component.css']
+            selector: 'app-gallery',
+            templateUrl: './gallery.component.html',
+            styleUrls: ['./gallery.component.css']
         }),
-        __metadata("design:paramtypes", [])
-    ], GalleryListComponent);
-    return GalleryListComponent;
+        __metadata("design:paramtypes", [gallery_service_1.GalleryService])
+    ], GalleryComponent);
+    return GalleryComponent;
 }());
-exports.GalleryListComponent = GalleryListComponent;
-//# sourceMappingURL=gallery-list.component.js.map
+exports.GalleryComponent = GalleryComponent;
+//# sourceMappingURL=gallery.component.js.map

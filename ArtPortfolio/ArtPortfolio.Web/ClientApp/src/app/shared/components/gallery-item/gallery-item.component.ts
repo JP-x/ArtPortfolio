@@ -9,7 +9,7 @@ export class GalleryItemComponent implements OnInit {
   @Input() imageUrl = '';
   @Input() imageUrlThumbnail = '';
   @Input() itemArtist = '';
-  @Input() itemTitle = ''
+  @Input() itemTitle = '';
 
   constructor() { }
 

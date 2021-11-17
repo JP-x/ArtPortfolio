@@ -9,30 +9,31 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.GalleryListComponent = void 0;
+exports.HomeComponent = void 0;
 var core_1 = require("@angular/core");
-var GalleryListComponent = /** @class */ (function () {
-    function GalleryListComponent() {
-        /* galleryItem: GalleryItem; */
-        //inject service into component
-        this.galleryItems = [];
+var home_service_1 = require("../services/home.service");
+var HomeComponent = /** @class */ (function () {
+    function HomeComponent(homeService) {
+        this.homeService = homeService;
+        this.pageTitle = 'Home';
     }
-    GalleryListComponent.prototype.ngOnInit = function () {
-        console.log();
+    HomeComponent.prototype.ngOnInit = function () {
+        var _this = this;
+        this.homeService.getHome().subscribe(function (home) {
+            console.log('Home items!');
+            console.log(home);
+            _this.homeViewModel = home;
+        });
     };
-    __decorate([
-        (0, core_1.Input)(),
-        __metadata("design:type", Array)
-    ], GalleryListComponent.prototype, "galleryItems", void 0);
-    GalleryListComponent = __decorate([
+    HomeComponent = __decorate([
         (0, core_1.Component)({
-            selector: 'app-gallery-list',
-            templateUrl: './gallery-list.component.html',
-            styleUrls: ['./gallery-list.component.css']
+            selector: 'app-home',
+            templateUrl: './home.component.html',
+            styleUrls: ['./home.component.css']
         }),
-        __metadata("design:paramtypes", [])
-    ], GalleryListComponent);
-    return GalleryListComponent;
+        __metadata("design:paramtypes", [home_service_1.HomeService])
+    ], HomeComponent);
+    return HomeComponent;
 }());
-exports.GalleryListComponent = GalleryListComponent;
-//# sourceMappingURL=gallery-list.component.js.map
+exports.HomeComponent = HomeComponent;
+//# sourceMappingURL=home.component.js.map
