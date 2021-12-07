@@ -16,8 +16,6 @@ export class HomeComponent implements OnInit {
   ngOnInit(): void {
     this.homeService.getHome().subscribe(
       (home) => {
-        console.log('Home items!');
-        console.log(home);
         this.homeViewModel = home;
       }
     );

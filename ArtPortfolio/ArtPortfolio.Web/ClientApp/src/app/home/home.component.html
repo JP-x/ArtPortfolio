@@ -26,7 +26,7 @@
   </div>
   <div class="row">
     <div class="col-12 d-flex justify-content-center">
-      <app-gallery-list [galleryItems]="homeViewModel.featuredGallery"></app-gallery-list>
+      <app-gallery-list *ngIf="homeViewModel" [galleryItems]="homeViewModel.featuredGallery"></app-gallery-list>
     </div>
   </div>
   <div class="row mt-3 mb-5">
@@ -43,7 +43,7 @@
   </div>
   <div class="row">
     <div class="col-12 d-flex justify-content-center">
-      <app-gallery-list [galleryItems]="homeViewModel.recentGallery"></app-gallery-list>
+      <app-gallery-list  *ngIf="homeViewModel" [galleryItems]="homeViewModel.recentGallery"></app-gallery-list>
 
     </div>
   </div>
