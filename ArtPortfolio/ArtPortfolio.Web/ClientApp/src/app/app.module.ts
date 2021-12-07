@@ -12,12 +12,16 @@ import { GalleryItemComponent } from './shared/components/gallery-item/gallery-i
 import { HomeComponent } from './home/home.component';
 import { GalleryComponent } from './gallery/gallery.component';
 import { SocialListComponent } from './shared/components/social-list/social-list.component'
+import { GalleryDialogComponent } from './shared/components/gallery-dialog/gallery-dialog.component';
+
 import { MatCardModule } from '@angular/material/card';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { ParallaxDirective } from './shared/directives/parallax.directive';
 import { FontAwesomeModule, FaIconLibrary } from '@fortawesome/angular-fontawesome';
 
 import { faGithub, faLinkedin, faInstagram, faTwitch, faTwitter, faEtsy } from '@fortawesome/free-brands-svg-icons';
+import { MatDialogModule } from '@angular/material/dialog';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -26,7 +30,8 @@ import { faGithub, faLinkedin, faInstagram, faTwitch, faTwitter, faEtsy } from '
     HomeComponent,
     GalleryComponent,
     ParallaxDirective,
-    SocialListComponent
+    SocialListComponent,
+    GalleryDialogComponent
   ],
   imports: [
     BrowserModule,
@@ -35,7 +40,8 @@ import { faGithub, faLinkedin, faInstagram, faTwitch, faTwitter, faEtsy } from '
     MatCardModule,
     MatPaginatorModule,
     FontAwesomeModule,
-    HttpClientModule
+    HttpClientModule,
+    MatDialogModule
   ],
   providers: [],
   bootstrap: [AppComponent]

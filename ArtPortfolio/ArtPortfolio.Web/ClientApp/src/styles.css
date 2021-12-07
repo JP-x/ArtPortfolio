@@ -181,3 +181,11 @@ a.customButton span {
   display: block;
   /*background: rgba(51,153,255,.7);
 }*/
+
+.app-full-bleed-dialog .mat-dialog-container {
+  padding: 0;
+}
+
+.app-backdrop{
+    margin:5px;
+}

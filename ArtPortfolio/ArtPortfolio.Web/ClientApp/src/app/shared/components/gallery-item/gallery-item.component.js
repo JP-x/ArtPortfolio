@@ -17,31 +17,15 @@ var GalleryItemComponent = /** @class */ (function () {
         this.imageUrlThumbnail = '';
         this.itemArtist = '';
         this.itemTitle = '';
+        //emit the "notify" event
+        this.artSelected = new core_1.EventEmitter();
     }
     GalleryItemComponent.prototype.ngOnInit = function () {
-        //this.selectSampleImg();
     };
-    GalleryItemComponent.prototype.getRandomArbitrary = function (min, max) {
-        return Math.random() * (max - min) + min;
-    };
-    GalleryItemComponent.prototype.selectSampleImg = function () {
-        this.imageUrl = '../../../assets/Sample_400x600.png';
-        this.itemArtist = 'Artist J';
-        this.itemTitle = 'item title J ';
-        /*
-        const randomNum = Math.floor(this.getRandomArbitrary(0, 100));
-        //console.log('Random Num: ' + randomNum);
-        if (randomNum % 2 === 0) {
-          this.imageUrl = '../../../assets/Sample_320x320.png';
-          this.itemArtist = 'Artist J';
-          this.itemTitle = 'item title J ';
-        }
-        else {
-          this.imageUrl = '../../../assets/Sample_400x600.png';
-          this.itemArtist = 'Artist A';
-          this.itemTitle = 'item title A';
-        }
-        */
+    //emit the "notify" event
+    GalleryItemComponent.prototype.onClick = function () {
+        //console.log(this.itemTitle + ' clicked!');
+        this.artSelected.emit(this.imageUrl);
     };
     __decorate([
         (0, core_1.Input)(),
@@ -59,6 +43,10 @@ var GalleryItemComponent = /** @class */ (function () {
         (0, core_1.Input)(),
         __metadata("design:type", Object)
     ], GalleryItemComponent.prototype, "itemTitle", void 0);
+    __decorate([
+        (0, core_1.Output)(),
+        __metadata("design:type", core_1.EventEmitter)
+    ], GalleryItemComponent.prototype, "artSelected", void 0);
     GalleryItemComponent = __decorate([
         (0, core_1.Component)({
             selector: 'app-gallery-item',

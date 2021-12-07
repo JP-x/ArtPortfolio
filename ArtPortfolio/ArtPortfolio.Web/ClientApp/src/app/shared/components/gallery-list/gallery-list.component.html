@@ -1,8 +1,8 @@
 <!-- Limit to 3 per row to prevent clutter-->
 <div class="container">
   <div class="row">
-      <div *ngFor="let galleryItem of galleryItems" class="col-12 col-xs-12 col-sm-12 col-md-4">
-        <app-gallery-item [itemTitle]="galleryItem.title" [itemArtist]="galleryItem.username" [imageUrlThumbnail]="galleryItem.cdnUrlThumbnail" [imageUrl]="galleryItem.cdnUrl"></app-gallery-item>
-      </div>
+    <div *ngFor="let galleryItem of galleryItems" class="col-12 col-xs-12 col-sm-12 col-md-4">
+      <app-gallery-item (artSelected)="onArtSelected($event)" [itemTitle]="galleryItem.title" [itemArtist]="galleryItem.username" [imageUrlThumbnail]="galleryItem.cdnUrlThumbnail" [imageUrl]="galleryItem.cdnUrl"></app-gallery-item>
+    </div>
   </div>
 </div>

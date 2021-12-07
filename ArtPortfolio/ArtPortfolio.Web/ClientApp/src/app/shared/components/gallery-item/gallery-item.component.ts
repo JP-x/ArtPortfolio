@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 
 @Component({
   selector: 'app-gallery-item',
@@ -10,35 +10,17 @@ export class GalleryItemComponent implements OnInit {
   @Input() imageUrlThumbnail = '';
   @Input() itemArtist = '';
   @Input() itemTitle = '';
+  //emit the "notify" event
+  @Output() artSelected: EventEmitter<string> = new EventEmitter<string>();
 
   constructor() { }
 
   ngOnInit(): void {
-    //this.selectSampleImg();
   }
 
-  private getRandomArbitrary(min: number, max: number) {
-    return Math.random() * (max - min) + min;
+  //emit the "notify" event
+  onClick() {
+    //console.log(this.itemTitle + ' clicked!');
+    this.artSelected.emit(this.imageUrl);
   }
-
-  selectSampleImg() {
-    this.imageUrl = '../../../assets/Sample_400x600.png';
-    this.itemArtist = 'Artist J';
-    this.itemTitle = 'item title J ';
-    /*
-    const randomNum = Math.floor(this.getRandomArbitrary(0, 100));
-    //console.log('Random Num: ' + randomNum);
-    if (randomNum % 2 === 0) {
-      this.imageUrl = '../../../assets/Sample_320x320.png';
-      this.itemArtist = 'Artist J';
-      this.itemTitle = 'item title J ';
-    }
-    else {
-      this.imageUrl = '../../../assets/Sample_400x600.png';
-      this.itemArtist = 'Artist A';
-      this.itemTitle = 'item title A';
-    }
-    */
-  }
-
 }

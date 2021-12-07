@@ -20,8 +20,6 @@ var HomeComponent = /** @class */ (function () {
     HomeComponent.prototype.ngOnInit = function () {
         var _this = this;
         this.homeService.getHome().subscribe(function (home) {
-            console.log('Home items!');
-            console.log(home);
             _this.homeViewModel = home;
         });
     };
