@@ -19,6 +19,7 @@ var GalleryListComponent = /** @class */ (function () {
         /* galleryItem: GalleryItem; */
         //inject service into component
         this.galleryItems = [];
+        this.selectedArtUrl = "";
     }
     GalleryListComponent.prototype.ngOnInit = function () {
     };
@@ -42,7 +43,7 @@ var GalleryListComponent = /** @class */ (function () {
     ], GalleryListComponent.prototype, "galleryItems", void 0);
     __decorate([
         (0, core_1.Input)(),
-        __metadata("design:type", String)
+        __metadata("design:type", Object)
     ], GalleryListComponent.prototype, "selectedArtUrl", void 0);
     GalleryListComponent = __decorate([
         (0, core_1.Component)({

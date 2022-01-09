@@ -13,7 +13,7 @@ export class GalleryListComponent implements OnInit {
   /* galleryItem: GalleryItem; */
   //inject service into component
   @Input() galleryItems: GalleryItem[] = [];
-  @Input() selectedArtUrl: string;
+  @Input() selectedArtUrl = "";
   constructor(public dialog: MatDialog) { }
 
   ngOnInit(): void {
