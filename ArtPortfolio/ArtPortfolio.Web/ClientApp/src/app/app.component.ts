@@ -8,7 +8,9 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'Artist Portfolio';
   pageTitle = 'Artist Portfolio'
-  logoUrl = '../assets/Sample_Logo_640x320.png';
+  logoUrl = 'https://cdn-endpoint-artist-portfolio.azureedge.net/artist-portfolio/assets/jippu_logo_simple.jpg';
+  logoUrlLight = 'https://cdn-endpoint-artist-portfolio.azureedge.net/artist-portfolio/assets/jippu_logo_black.png';
+  logoUrlDark = 'https://cdn-endpoint-artist-portfolio.azureedge.net/artist-portfolio/assets/jippu_logo_simple_logo_only.png';
   createdBy = 'Jonathan Padilla'
   year: number = new Date().getFullYear();
 }

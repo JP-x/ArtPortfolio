@@ -21,11 +21,13 @@ var gallery_item_component_1 = require("./shared/components/gallery-item/gallery
 var home_component_1 = require("./home/home.component");
 var gallery_component_1 = require("./gallery/gallery.component");
 var social_list_component_1 = require("./shared/components/social-list/social-list.component");
+var gallery_dialog_component_1 = require("./shared/components/gallery-dialog/gallery-dialog.component");
 var card_1 = require("@angular/material/card");
 var paginator_1 = require("@angular/material/paginator");
 var parallax_directive_1 = require("./shared/directives/parallax.directive");
 var angular_fontawesome_1 = require("@fortawesome/angular-fontawesome");
 var free_brands_svg_icons_1 = require("@fortawesome/free-brands-svg-icons");
+var dialog_1 = require("@angular/material/dialog");
 var AppModule = /** @class */ (function () {
     function AppModule(library) {
         this.library = library;
@@ -40,7 +42,8 @@ var AppModule = /** @class */ (function () {
                 home_component_1.HomeComponent,
                 gallery_component_1.GalleryComponent,
                 parallax_directive_1.ParallaxDirective,
-                social_list_component_1.SocialListComponent
+                social_list_component_1.SocialListComponent,
+                gallery_dialog_component_1.GalleryDialogComponent
             ],
             imports: [
                 platform_browser_1.BrowserModule,
@@ -49,7 +52,8 @@ var AppModule = /** @class */ (function () {
                 card_1.MatCardModule,
                 paginator_1.MatPaginatorModule,
                 angular_fontawesome_1.FontAwesomeModule,
-                http_1.HttpClientModule
+                http_1.HttpClientModule,
+                dialog_1.MatDialogModule
             ],
             providers: [],
             bootstrap: [app_component_1.AppComponent]

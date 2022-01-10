@@ -1,10 +1,11 @@
-<!-- functionally like the _layout.cshtml file from MVC -->
-<!-- TODO: Update with parallax / collapsing / fixed nav -->
-
-
-<nav class="navbar fixed-top navbar-expand-lg navbar-light bg-light">
+<nav class="navbar fixed-top navbar-expand-lg bg-pref shadow">
   <div class="container container-fluid">
-    <a class="navbar-brand" href="#"><img src="{{logoUrl}}" alt="" width="125" height="50" class="logo"></a>
+    <a class="navbar-brand" href="#">
+      <picture>
+        <source srcset="{{logoUrlDark}}" media="(prefers-color-scheme: dark)">
+        <img src="{{logoUrlLight}}" width="125" height="50" alt="Jippu Logo">
+      </picture>
+    </a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
     data-bs-target="#navbarNav" aria-controls="navbarNav"
             aria-expanded="false" aria-label="Toggle navigation">
@@ -16,22 +17,22 @@
           <a class="nav-link" routerLinkActive='active' routerLink='/home'>Home</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">About</a>
+          <a class="nav-link" href="/#">About</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" routerLinkActive='active' routerLink='/gallery'>Gallery</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="https://etsy.com">Store</a>
+          <a class="nav-link"  href="https://etsy.com">Store</a>
         </li>
       </ul>
     </div>
   </div>
 </nav>
-<div class="parallax_container">
-  <!-- class="parallax_overlay" -->
+<div class="parallax_container wave-bg">
+  <br/><br />
       <div class="pt-5 d-flex justify-content-center">
-        <img src="{{logoUrl}}" appParallax [factor]="12" class="img-fluid" />
+        <img src="{{logoUrlDark}}" appParallax [factor]="12" class="img-fluid logo" />
       </div>
 </div>
 
@@ -41,7 +42,7 @@
 </div>
 
 <!-- footer -->
-<footer class="page-footer bg-light">
+<footer class="page-footer bg-pref">
   <div class="container">
     <div class="row">
       <div class="col-12 d-flex justify-content-center">

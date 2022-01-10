@@ -1,5 +1,24 @@
 /* You can add global styles to this file, and also import other style files */
 @import "~bootstrap/dist/css/bootstrap.min.css";
+.logo {
+  max-height: 40%;
+  max-width: 40%
+}
+
+
+body {
+  margin: 0;
+  font-family: "Monteserrat", Roboto, "Helvetica Neue", sans-serif;
+  background-color: #333;
+}
+
+.bg-pref{
+    background-color:#444444;
+}
+
+.social-icon-pref-color {
+  color: grey;
+}
 
 html, body {
   height: 100%;
@@ -8,29 +27,24 @@ html, body {
 h1 {
   font-family: 'Staatliches', cursive !important;
   font-weight: bold !important;
+  color:black;
 }
 
-h1.sectionTitle{
-    background-color:white;
-}
+  h1.sectionTitle {
+    background-color: #ebebeb;
+  }
 
-.hr-divider{
-    display:inline-block;
-    width:33%;
-    margin:auto;
+.hr-divider {
+  display: inline-block;
+  width: 33%;
+  margin: auto;
 }
 
 .sectionTitle {
   font-family: 'Staatliches', cursive !important;
   font-weight: bold !important;
-  font-size:x-large;
-}
-
-body {
-  margin: 0;
-  font-family: "Monteserrat", Roboto, "Helvetica Neue", sans-serif;
-  background-color: #777;
-
+  font-size: x-large;
+  color: black;
 }
 
 .parallax_container {
@@ -40,9 +54,20 @@ body {
   background-attachment: fixed;
   background-color: #e5e5f7;
   opacity: 1;
-  background-image: repeating-radial-gradient( circle at 0 0, transparent 0, #777 10px ), repeating-linear-gradient( #0058ad, #0058ad );
   background-repeat: repeat;
   overflow: hidden;
+}
+
+.circle_bg {
+  background-color: #b30000;
+  opacity: 0.8;
+  background-image: radial-gradient(circle at center center, #000000, #b30000), repeating-radial-gradient(circle at center center, #000000, #000000, 10px, transparent 20px, transparent 10px);
+  background-blend-mode: multiply;
+}
+
+.wave-bg {
+  background-image: url("https://cdn-endpoint-artist-portfolio.azureedge.net/artist-portfolio/assets/background.jpg");
+  margin: auto;
 }
 
 .parallax_overlay {
@@ -51,24 +76,26 @@ body {
   margin: auto;
 }
 
-
 #banner-background {
-
 }
 
 
-.container-main{
-    background-color: #fff;
-    padding-bottom: 2em;
+.container-main {
+  background-color: #ebebeb;
+  padding-bottom: 2em;
 }
 
-.logo  {
-
-}
 
 .nav-link {
   font-family: 'Staatliches', cursive;
-      font-size: large;
+  font-size: large;
+  color:rgba(255,255,255,0.55) !important;
+}
+
+.nav-link.active {
+  font-family: 'Staatliches', cursive;
+  font-size: large;
+  color: rgba(255,255,255,1) !important;
 }
 
 .wrapper {
@@ -77,36 +104,23 @@ body {
   left: 50%;
   transform: translate(-50%, -50%);
 }
-/*
-display: block;
-width: 200px;
-height: 40px;
-line-height: 40px;
-font-size: 18px;
-font-family: sans-serif;
-text-decoration: none;
-color: #333;
-border: 2px solid #333;
-letter-spacing: 2px;
-text-align: center;
-position: relative;
-transition: all .35s;
-    */
+
+/* outlined buttons with transitions */
 a.customButton {
   display: inline-block;
   padding: 0.50em 1.5em;
-  border: 0.1em solid #1b133c;
+  border: 0.1em solid darkred;
   margin: 0 .3em 0.3em 0;
   border-radius: 0.12em;
   box-sizing: border-box;
   text-decoration: none;
   font-family: "Monteserrat",sans-serif;
   font-weight: bold;
-  color: #FFF;
-  background-color: #1b133c;
+  color: white;
+  background-color: darkred;
   text-align: center;
-  transition: all 0.2s ;
-  position:relative;
+  transition: all 0.2s;
+  position: relative;
 }
 
 a.customButton span {
@@ -114,35 +128,26 @@ a.customButton span {
   z-index: 2;
 }
 
-  a.customButton:after {
-    position: absolute;
-    content: "";
-    top: 0;
-    left: 0;
-    width: 0;
-    height: 100%;
-    color: #1b133c;
-    background: #fff;
-    transition: all .35s;
-  }
+a.customButton:after {
+  position: absolute;
+  content: "";
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 100%;
+  color: darkred;
+  background: black;
+  transition: all .35s;
+}
 
-  a.customButton:hover {
-    color: #1b133c;
-  }
+a.customButton:hover {
+  color: white;
+}
 
-  a.customButton:hover:after {
-    width: 100%;
-  }
-  /*
-  a.customButton:before {
-    background-color: #1b133c;
-    transition: all 1s ease;
-  }
+a.customButton:hover:after {
+  width: 100%;
+}
 
-  a.customButton:hover {
-    color: #1b133c;
-    background-color: transparent;
-  }*/
 
 @media all and (max-width:30em) {
    a.customButton {
@@ -151,41 +156,120 @@ a.customButton span {
   }
 }
 
-/*
-    .parallax-container {
-  position: relative;
-  overflow: hidden;
-  height: 500px;
-}
-.nav-wrapper {
-  position: relative;
-  height: 100%;
-}
-
-.parallax {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  z-index: -1;
-}
-
-
-
-
-.parallax-container-day {
-  position: relative;
-  overflow: hidden;
-  height: 500px;
-  display: block;
-  /*background: rgba(51,153,255,.7);
-}*/
-
 .app-full-bleed-dialog .mat-dialog-container {
   padding: 0;
 }
 
-.app-backdrop{
-    margin:5px;
+.app-backdrop {
+  margin: 5px;
+}
+
+
+
+.logo-img-white {
+  background-image: url('https://cdn-endpoint-artist-portfolio.azureedge.net/artist-portfolio/assets/jippu_logo_simple_logo_only.png');
+}
+
+.logo-img-black {
+  background-image: url('https://cdn-endpoint-artist-portfolio.azureedge.net/artist-portfolio/assets/jippu_logo_black.png');
+}
+
+
+
+@media (prefers-color-scheme: dark) {
+  body {
+    background-color: #444444;
+  }
+
+  .text-large {
+    font-size: large;
+  }
+
+  h1 {
+    font-weight: 500 !important;
+    color: white;
+  }
+
+  .sectionTitle {
+    font-weight: 500 !important;
+    color: white;
+  }
+
+  .nav-link {
+    font-family: 'Staatliches', cursive;
+    font-size: large;
+    color: rgba(255,255,255,0.55) !important;
+  }
+
+    .nav-link.active {
+      font-family: 'Staatliches', cursive;
+      font-size: large;
+      color: rgba(255,255,255,0.9) !important;
+    }
+
+  .container-main {
+    background-color: #444444;
+    padding-bottom: 2em;
+    color: #fff;
+  }
+
+  .bg-pref {
+    background-color: #333333;
+    color: white;
+  }
+
+  .social-icon-pref-color {
+    color: darkred;
+  }
+
+  .navbar-toggler {
+    color: rgba(255,255,255,.55);
+    border-color: rgba(255,255,255,.1);
+  }
+
+  .navbar-toggler-icon {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28255, 255, 255, 0.55%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+  }
+}
+
+@media (prefers-color-scheme: light) {
+  body {
+    background-color: #ebebeb;
+  }
+
+  .container-main {
+    background-color: #ebebeb;
+    padding-bottom: 2em;
+    color: #444444;
+  }
+
+  .bg-pref {
+    background-color: #ebebeb;
+    color: #444444;
+  }
+
+  .social-icon-pref-color {
+    color: grey;
+  }
+
+  .nav-link {
+    font-family: 'Staatliches', cursive;
+    font-size: large;
+    color: rgba(0,0,0,0.55) !important;
+  }
+
+  .nav-link.active {
+    font-family: 'Staatliches', cursive;
+    font-size: large;
+    color: rgba(0,0,0,0.9) !important;
+  }
+
+  .navbar-toggler {
+    color: rgba(0,0,0,.55);
+    border-color: rgba(0,0,0,.1);
+  }
+
+  .navbar-toggler-icon {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%280, 0, 0, 0.55%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+  }
 }
