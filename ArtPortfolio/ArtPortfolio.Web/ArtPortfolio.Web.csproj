@@ -31,6 +31,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Remove="ClientApp\src\app\models\criteria.ts" />
     <None Remove="ClientApp\src\app\models\galleryItem.ts" />
     <None Remove="ClientApp\src\app\models\homeViewModel.ts" />
     <None Remove="ClientApp\src\app\services\gallery.service.ts" />
