@@ -6,7 +6,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'Artist Portfolio';
+  title = 'Jippu';
   pageTitle = 'Artist Portfolio'
   logoUrl = 'https://cdn-endpoint-artist-portfolio.azureedge.net/artist-portfolio/assets/jippu_logo_simple.jpg';
   logoUrlLight = 'https://cdn-endpoint-artist-portfolio.azureedge.net/artist-portfolio/assets/jippu_logo_black.png';

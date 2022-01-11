@@ -10,7 +10,7 @@ exports.AppComponent = void 0;
 var core_1 = require("@angular/core");
 var AppComponent = /** @class */ (function () {
     function AppComponent() {
-        this.title = 'Artist Portfolio';
+        this.title = 'Jippu';
         this.pageTitle = 'Artist Portfolio';
         this.logoUrl = 'https://cdn-endpoint-artist-portfolio.azureedge.net/artist-portfolio/assets/jippu_logo_simple.jpg';
         this.logoUrlLight = 'https://cdn-endpoint-artist-portfolio.azureedge.net/artist-portfolio/assets/jippu_logo_black.png';

@@ -6,12 +6,12 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./social-list.component.css']
 })
 export class SocialListComponent implements OnInit {
-  urlGithub = 'https://github.com';
-  urlLinkedIn = 'https://www.linkedin.com/';
-  urlInstagram = 'https://instagram.com';
-  urlTwitch = 'https://twitch.tv';
-  urlTwitter = 'https://twitter.com';
-  urlEtsy = 'https://etsy.com';
+  urlGithub = 'https://github.com/JP-x';
+  urlLinkedIn = 'https://www.linkedin.com/in/jonathanpadilla4/';
+  urlInstagram = 'https://instagram.com/jpversusart';
+  urlTwitch = '';
+  urlTwitter = '';
+  urlEtsy = '';
   constructor() { }
 
   ngOnInit(): void {
