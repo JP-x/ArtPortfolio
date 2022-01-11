@@ -28,7 +28,7 @@ namespace ArtPortfolio.Functions.Gallery
         public static async Task<IActionResult> Run(
             [HttpTrigger(AuthorizationLevel.Function, "get", Route = "Gallery")] HttpRequest req, ILogger log)
         {
-            string sqlText = "Select TOP(6) * from gallery.vArtistGallery order by CreatedActual desc;";
+            string sqlText = "Select TOP(30) * from gallery.vArtistGallery where HideInDemo = 0 order by CreatedActual desc;";
             using (var conn = new SqlConnection(_galleryConfig))
             {
                 conn.Open();
