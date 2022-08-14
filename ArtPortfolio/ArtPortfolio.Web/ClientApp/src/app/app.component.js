@@ -10,11 +10,12 @@ exports.AppComponent = void 0;
 var core_1 = require("@angular/core");
 var AppComponent = /** @class */ (function () {
     function AppComponent() {
-        this.title = 'Jippu';
+        this.title = 'Jonathan Portfolio';
         this.pageTitle = 'Artist Portfolio';
-        this.logoUrl = 'https://cdn-endpoint-artist-portfolio.azureedge.net/artist-portfolio/assets/jippu_logo_simple.jpg';
-        this.logoUrlLight = 'https://cdn-endpoint-artist-portfolio.azureedge.net/artist-portfolio/assets/jippu_logo_black.png';
-        this.logoUrlDark = 'https://cdn-endpoint-artist-portfolio.azureedge.net/artist-portfolio/assets/jippu_logo_simple_logo_only.png';
+        this.logoUrl = 'https://cdn-endpoint-artist-portfolio.azureedge.net/artist-portfolio/assets/jonp_logo_simple.png';
+        this.logoUrlLight = 'https://cdn-endpoint-artist-portfolio.azureedge.net/artist-portfolio/assets/jonp_logo_black_simple.png';
+        this.logoUrlDark = 'https://cdn-endpoint-artist-portfolio.azureedge.net/artist-portfolio/assets/jonp_logo_simple.png';
+        this.bgUrl = 'https://cdn-endpoint-artist-portfolio.azureedge.net/artist-portfolio/assets/bg_vid2.mp4';
         this.createdBy = 'Jonathan Padilla';
         this.year = new Date().getFullYear();
     }

@@ -6,11 +6,12 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'Jippu';
+  title = 'Jonathan Portfolio';
   pageTitle = 'Artist Portfolio'
-  logoUrl = 'https://cdn-endpoint-artist-portfolio.azureedge.net/artist-portfolio/assets/jippu_logo_simple.jpg';
-  logoUrlLight = 'https://cdn-endpoint-artist-portfolio.azureedge.net/artist-portfolio/assets/jippu_logo_black.png';
-  logoUrlDark = 'https://cdn-endpoint-artist-portfolio.azureedge.net/artist-portfolio/assets/jippu_logo_simple_logo_only.png';
+  logoUrl = 'https://cdn-endpoint-artist-portfolio.azureedge.net/artist-portfolio/assets/jonp_logo_simple.png';
+  logoUrlLight = 'https://cdn-endpoint-artist-portfolio.azureedge.net/artist-portfolio/assets/jonp_logo_black_simple.png';
+  logoUrlDark = 'https://cdn-endpoint-artist-portfolio.azureedge.net/artist-portfolio/assets/jonp_logo_simple.png';
+  bgUrl = 'https://cdn-endpoint-artist-portfolio.azureedge.net/artist-portfolio/assets/bg_vid2.mp4'
   createdBy = 'Jonathan Padilla'
   year: number = new Date().getFullYear();
 }
