@@ -8,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 export class SocialListComponent implements OnInit {
   urlGithub = 'https://github.com/JP-x';
   urlLinkedIn = 'https://www.linkedin.com/in/jonathanpadilla4/';
-  urlInstagram = 'https://instagram.com/jpversusart';
+  urlInstagram = '';
   urlTwitch = '';
   urlTwitter = '';
   urlEtsy = '';
